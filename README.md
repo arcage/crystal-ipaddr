@@ -9,7 +9,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ipaddr:
-    github: arcage/ipaddr
+    github: arcage/crystal-ipaddr
 ```
 
 ## Usage
