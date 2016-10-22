@@ -276,4 +276,8 @@ class IPAddr
   def bit_size : Int32
     IPAddr.bit_size(@family)
   end
+
+  def network_address(prefix_length : Int) : NetworkAddr
+    NetworkAddr.new(self, prefix_length)
+  end
 end

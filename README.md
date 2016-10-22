@@ -23,9 +23,13 @@ require "ipaddr"
 ```crystal
 ipv4 = IPAddr.new("169.254.10.1")
 # => #<IPAddr:IPv4 "169.254.10.1">
+ipv4.to_s
+# => "169.254.10.1"
 
 ipv6 = IPAddr.new("2001:db8::deca:face")
 # => #<IPAddr:IPv6 "2001:0db8:0000:0000:0000:0000:deca:face">
+ipv6.to_s
+# => "2001:db8::deca:face"
 ```
 
 ### IPv4 compatible/mapped IPv6 address
@@ -59,6 +63,8 @@ nw3 = IPAddr::NetworkAddr.new("192.168.20.2/255.255.255.0")
 nw4 = IPAddr::NetworkAddr.new("2001:db8::beaf:cafe/120")
 # => #<IPAddr::NetworkAddr:IPv6 "2001:0db8:0000:0000:0000:0000:beaf:ca00/120">
 
+nw5 = ipv4.network_address(16)
+# => #<IPAddr::NetworkAddr:IPv4 "169.254.0.0/16">
 
 nw.begin
 # => #<IPAddr:IPv4 "169.254.0.0">
